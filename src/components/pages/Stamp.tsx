@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { route } from "../../constants/routes";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
+import { FIXME_any } from "@/types/global";
 
-type Props = {};
+interface Props extends RouteComponentProps {}
 
-const Stamp: React.FC<Props> = () => {
+const Stamp: React.FC<Props> = (props: Props) => {
   const [serialNumber, setSerialNumber] = useState("");
+
+  useEffect(() => {
+    startScanning(setSerialNumber, props.history);
+  }, []);
 
   return (
     <>
@@ -13,22 +18,15 @@ const Stamp: React.FC<Props> = () => {
       <div>
         <Link to={route.HOME}>Back to Home</Link>
       </div>
-
-      <button
-        onClick={() => {
-          startScanning(setSerialNumber);
-        }}
-      >
-        Start Scanning
-      </button>
       <p>{serialNumber}</p>
     </>
   );
 };
 
-const startScanning = (setter: any) => {
+const startScanning = (setter: FIXME_any, history: FIXME_any) => {
   if (!("NDEFReader" in window)) {
     alert("このブラウザは対応していません");
+    history.push(route.HOME);
     return;
   }
 
@@ -38,7 +36,6 @@ const startScanning = (setter: any) => {
     .scan()
     .then(() => {
       reader.onreading = (event) => {
-        console.log(event);
         setter(event.serialNumber);
       };
     })
@@ -47,4 +44,4 @@ const startScanning = (setter: any) => {
     });
 };
 
-export default Stamp;
+export default withRouter(Stamp);
