@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 type Props = {};
 
-const Home: React.FC<Props> = (props) => {
+const Stamp: React.FC<Props> = (props) => {
   useEffect(() => {}, []);
 
   return (
@@ -33,4 +33,4 @@ const startScanning = () => {
     });
 };
 
-export default Home;
+export default Stamp;
