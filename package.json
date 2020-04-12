@@ -10,6 +10,7 @@
     "dev": "parcel src/index.html watch --port 3000",
     "build": "parcel build src/index.html",
     "deploy": "parcel build src/index.html; firebase deploy;",
+    "deploy:gas": "cd gas/; clasp push; cd ../",
     "prettier": "prettier \"src/**/*.{ts,tsx}\" --write"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
+    "@types/google-apps-script": "^1.0.12",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/react-redux": "^7.1.7",
