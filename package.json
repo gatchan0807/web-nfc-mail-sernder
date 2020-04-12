@@ -1,0 +1,33 @@
+{
+  "name": "web-nfc-mail-sender",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gatchan0807/web-nfc-mail-sernder.git",
+  "author": "gatchan0807 <yuki.dolphin.koga@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "parcel src/index.html watch --port 3000",
+    "build": "parcel build src/index.html",
+    "deploy": "parcel build src/index.html; firebase deploy;",
+    "prettier": "prettier \"src/**/*.{ts,tsx}\" --write"
+  },
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/react-redux": "^7.1.7",
+    "@types/react-router-dom": "^5.1.4",
+    "@types/redux": "^3.6.0",
+    "@types/redux-saga": "^0.10.5",
+    "@types/styled-components": "^5.0.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.4",
+    "react-hot-loader": "^4.12.20",
+    "typescript": "^3.8.3"
+  }
+}
