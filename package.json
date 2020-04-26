@@ -14,6 +14,7 @@
     "prettier": "prettier \"src/**/*.{ts,tsx}\" --write"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "parcel": "^1.12.4",
     "react": ">=15",
     "react-dom": "^16.13.1",
